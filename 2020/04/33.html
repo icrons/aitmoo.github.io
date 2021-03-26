@@ -1,173 +1,253 @@
 
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>  Python语音识别折腾记 |    云淡风轻</title>
-  <meta name="description" content="The future is you, the future can be expected.">
-  <!-- 标签页图标 -->
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="放弃不难，但坚持一定很酷。">
+  <meta name="author" content="Ne-21">
+  <meta name="keywords" content="云淡风轻, hexo, various, python, html, 小刀娱乐网, 编程, 自学">
+  
+  <title>Python语音识别折腾记 - 云淡风轻</title>
 
-  <!-- 图标库 -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-  <!-- 动画库 -->
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fushaolei/cdn-white@1.0/css/animate.css"/>
-  
-  <!-- css文件 -->
-  
-<link rel="stylesheet" href="/css/white.css">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
-  <!-- 代码高亮 -->
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
   
+    
     
       
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.1.1/styles/github.css">
-
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
     
   
-  <script data-ad-client="ca-pub-8199652999435074" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"gocos.cn","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":true,"offset_factor":2},"web_analytics":{"enable":true,"baidu":"46c8202ccbfe91fef8f7d5fddc0ce94a","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"oLziw6ntaHtCC9A0HLYYu5OE-gzGzoHsz","app_key":"KjHsec1b3kguAMPQ7io7JlFs","server_url":"https://olziw6nt.lc-cn-n1-shared.com"}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 
 <body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>云淡风轻</strong>&nbsp;</a>
 
-<div class="menu-outer">
-    <div class="menu-inner">
-      <div class="menu-site-name  animate__animated  animate__fadeInUp">
-        <a href="/">
-          云淡风轻
-        </a>
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-      </div>
-      <div class="menu-group">
-        <ul class="menu-ul">
-        
-          <a href="/" class="nav-link">
-            <li class="menu-li  animate__animated  animate__fadeInUp">
-              HOME
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
             </li>
-          </a>
+          
         
-          <a href="/archives" class="nav-link">
-            <li class="menu-li  animate__animated  animate__fadeInUp">
-              BLOG
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                时间轴
+              </a>
             </li>
-          </a>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
         
         
-        
-        <a href="/search">
-          <li class="menu-li  animate__animated  animate__fadeInUp">
-            <i class="ri-search-line"></i>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
           </li>
-        </a>
         
-          <li class="menu-li animate__animated  animate__fadeInUp" id="mobile-menu">
-            <i class="ri-menu-line"></i>
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
-        </ul>
-
-      </div>
-
+      </ul>
     </div>
-</div>
-<div id="mobile-main" class="animate__animated  animate__fadeIn">
-  <div class="mobile-menu-inner">
-    <div class="mobile-menu-site-name animate__animated  animate__fadeInUp">
-      <a href="/">
-        云淡风轻
-      </a>
-    </div>
-    <div class="mobile-menu-group" id="mobile-close">
-      <i class="ri-close-line"></i>
-    </div>
-
   </div>
+</nav>
 
-  <div class="mobile-menu-div">
-  
-    <a href="/" class="mobile-nav-link">
-      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
-        <span>HOME</span>
-      </div>
-    </a>
-  
-    <a href="/archives" class="mobile-nav-link">
-      <div class="mobile-menu-child animate__animated  animate__fadeInUp">
-        <span>BLOG</span>
-      </div>
-    </a>
-  
-  
-    <a href="/search">  
-      <div class="mobile-menu-child  animate__animated  animate__fadeInUp">
-        <i class="ri-search-line"></i>
-      </div>
-    </a>
-    
-  </div>
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Python语音识别折腾记">
+              
+            </span>
 
-
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-09 17:50" pubdate>
+        2020年4月9日 下午
+      </time>
+    </span>
+  
 </div>
 
-<div class="body-outer">
-  <div class="body-inner">
+<div class="mt-1">
+  
     
-<article class="post-inner">
-  <div class="post-content-outer">
-    <div class="post-intro">
-      <div class="post-title animate__animated  animate__fadeInUp">Python语音识别折腾记</div>
-      <div class="meta-intro animate__animated  animate__fadeInUp">4月 09 2020</div>
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
       
-    </div>
-    <div class="post-content-inner">
-      <div class="post-content-inner-space">
+      
+      24
+       分钟
+    </span>
+  
 
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
       </div>
-      <div class="post-content-main animate__animated  animate__fadeInUp">
-        <!-- top型目录 -->
-        
-        <blockquote>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python语音识别折腾记</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2020年4月9日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <blockquote>
 <p>今天好不容易休息半天，但是又被英语作业给折服了，就上一次<a href="https://gocos.cn/2020/03/29.html">U校园半自动化</a>造福大学生之后，就有这么一个想法，是什么呢？<br>就是能不能把听力的内容识别出来，变成文本。这样就可以看听力文本了，那答题岂不是很简单？<br>ok，废话不多说，下面就来介绍下自己的折腾日记和遇到的问题</p>
 </blockquote>
 <h1 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h1><p>我们第一步要做的就是拿到听力文件，怎么拿呢？——抓包<br>由于过于简单，我只说大概步骤，具体百度<br><code>登陆——进入听力测验——按F12打开开发者工具——点击音频播放按钮——看工具里的最后一个资源——双击该资源进入——下载音频</code></p>
 <h1 id="音频格式转换"><a href="#音频格式转换" class="headerlink" title="音频格式转换"></a>音频格式转换</h1><p>我们拿到的音频格式是MP3格式的，按照<a target="_blank" rel="noopener" href="https://ai.baidu.com/ai-doc/SPEECH/Vk38lxily">百度语音识别的文档</a>来说支持音频格式：pcm、wav、amr、m4a的音频，<br>当然我在这里卡住了，用格式工厂转码后进行识别会报错，由于格式工厂没有pcm格式，所以我在这里纠结怎么转换，当然百度也给出了<a target="_blank" rel="noopener" href="https://ai.baidu.com/ai-doc/SPEECH/7k38lxpwf">转换方法</a><br>我这里还没研究明白，恳请大佬指点，下面我们只能用百度提供的示例音频做演示了QAQ</p>
-<h1 id="在百度智能云开通服务"><a href="#在百度智能云开通服务" class="headerlink" title="在百度智能云开通服务"></a>在百度智能云开通服务</h1><p>1.登陆<a target="_blank" rel="noopener" href="https://login.bce.baidu.com/?account=&redirect=http://console.bce.baidu.com/">百度智能云</a><br>2.
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://s1.ax1x.com/2020/04/09/G5RH6H.png" >
-        </sapn>
-      <br>3.
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://ae01.alicdn.com/kf/H2c23f18f5055486ab6756f3fb584498ei.png" >
-        </sapn>
-      <br>4.
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://ae01.alicdn.com/kf/Hba63e7bd6da14287a237bf5504f519eb2.png" >
-        </sapn>
-      <br>5.
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://ae01.alicdn.com/kf/H9b980f96caea4f60913b8cef7d2c4742i.png" >
-        </sapn>
-      <br>6.
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://ae01.alicdn.com/kf/H43e62f8f01f94c3e97bf74740a61cd08o.png" >
-        </sapn>
-      <br>7.创建成功后，我们就会获得api-key,secret-key（后面会用到）<br>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://ae01.alicdn.com/kf/H7bd399a826824546bbddf77b6ac324d6a.png" >
-        </sapn>
-      </p>
+<h1 id="在百度智能云开通服务"><a href="#在百度智能云开通服务" class="headerlink" title="在百度智能云开通服务"></a>在百度智能云开通服务</h1><p>1.登陆<a target="_blank" rel="noopener" href="https://login.bce.baidu.com/?account=&redirect=http://console.bce.baidu.com/">百度智能云</a><br>2.<img src="https://s1.ax1x.com/2020/04/09/G5RH6H.png" srcset="/img/loading.gif" lazyload alt="2"><br>3.<img src="https://ae01.alicdn.com/kf/H2c23f18f5055486ab6756f3fb584498ei.png" srcset="/img/loading.gif" lazyload alt="3"><br>4.<img src="https://ae01.alicdn.com/kf/Hba63e7bd6da14287a237bf5504f519eb2.png" srcset="/img/loading.gif" lazyload alt="4"><br>5.<img src="https://ae01.alicdn.com/kf/H9b980f96caea4f60913b8cef7d2c4742i.png" srcset="/img/loading.gif" lazyload alt="5"><br>6.<img src="https://ae01.alicdn.com/kf/H43e62f8f01f94c3e97bf74740a61cd08o.png" srcset="/img/loading.gif" lazyload alt="6"><br>7.创建成功后，我们就会获得api-key,secret-key（后面会用到）<br><img src="https://ae01.alicdn.com/kf/H7bd399a826824546bbddf77b6ac324d6a.png" srcset="/img/loading.gif" lazyload alt="7"></p>
 <h1 id="开始在python构造请求"><a href="#开始在python构造请求" class="headerlink" title="开始在python构造请求"></a>开始在python构造请求</h1><p>这里我们直接使用百度提供的<a target="_blank" rel="noopener" href="https://github.com/Baidu-AIP/speech-demo/tree/master/rest-api-asr/python">DEMO</a>,然后自己做一些修改</p>
 <ul>
 <li><p>安装依赖库(利用pip,不懂请自行百度)</p>
@@ -177,198 +257,311 @@
 <li><p><code>pip install urllib</code> # 网页请求库</p>
 </li>
 <li><p>开始构造代码（注意看注释）</p>
-<pre><code># coding=utf-8
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># coding=utf-8</span><br><br><span class="hljs-comment"># 引入所需库</span><br><span class="hljs-keyword">import</span> sys<br><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">import</span> base64<br><span class="hljs-keyword">import</span> time<br><br>IS_PY3 = sys.version_info.major == <span class="hljs-number">3</span><br><br><span class="hljs-keyword">if</span> IS_PY3:<br>    <span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> urlopen<br>    <span class="hljs-keyword">from</span> urllib.request <span class="hljs-keyword">import</span> Request<br>    <span class="hljs-keyword">from</span> urllib.error <span class="hljs-keyword">import</span> URLError<br>    <span class="hljs-keyword">from</span> urllib.parse <span class="hljs-keyword">import</span> urlencode<br>    timer = time.perf_counter<br><span class="hljs-keyword">else</span>:<br>    <span class="hljs-keyword">from</span> urllib2 <span class="hljs-keyword">import</span> urlopen<br>    <span class="hljs-keyword">from</span> urllib2 <span class="hljs-keyword">import</span> Request<br>    <span class="hljs-keyword">from</span> urllib2 <span class="hljs-keyword">import</span> URLError<br>    <span class="hljs-keyword">from</span> urllib <span class="hljs-keyword">import</span> urlencode<br>    <span class="hljs-keyword">if</span> sys.platform == <span class="hljs-string">&quot;win32&quot;</span>:<br>        timer = time.clock<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-comment"># On most other platforms the best timer is time.time()</span><br>        timer = time.time<br><br><span class="hljs-comment"># 设置api-key,secret-key  此数据在上文有提及</span><br>API_KEY = <span class="hljs-string">&#x27;你的api-key&#x27;</span><br>SECRET_KEY = <span class="hljs-string">&#x27;你的secret-key&#x27;</span><br><br><span class="hljs-comment"># 需要识别的文件  ./audio/16k.pcm为音频文件路径，例如在D盘，那就是D:/audio/16k.pcm</span><br>AUDIO_FILE = <span class="hljs-string">&#x27;./audio/16k.pcm&#x27;</span>  <span class="hljs-comment"># 只支持 pcm/wav/amr 格式，极速版额外支持m4a 格式</span><br><span class="hljs-comment"># 文件格式</span><br>FORMAT = AUDIO_FILE[-<span class="hljs-number">3</span>:]  <span class="hljs-comment"># 文件后缀只支持 pcm/wav/amr 格式，极速版额外支持m4a 格式</span><br><br><span class="hljs-comment"># 电脑mac地址，个人感觉没用，默认即可</span><br>CUID = <span class="hljs-string">&#x27;123456PYTHON&#x27;</span><br><span class="hljs-comment"># 采样率</span><br>RATE = <span class="hljs-number">16000</span>  <span class="hljs-comment"># 固定值</span><br><br><span class="hljs-comment"># 普通版</span><br><br>DEV_PID = <span class="hljs-number">1537</span>  <span class="hljs-comment"># 1537 表示识别普通话，使用输入法模型。根据文档填写PID，选择语言及识别模型</span><br>ASR_URL = <span class="hljs-string">&#x27;http://vop.baidu.com/server_api&#x27;</span><br>SCOPE = <span class="hljs-string">&#x27;audio_voice_assistant_get&#x27;</span>  <span class="hljs-comment"># 有此scope表示有asr能力，没有请在网页里勾选，非常旧的应用可能没有</span><br><br><span class="hljs-comment">#测试自训练平台需要打开以下信息， 自训练平台模型上线后，您会看见 第二步：“”获取专属模型参数pid:8001，modelid:1234”，按照这个信息获取 dev_pid=8001，lm_id=1234</span><br><span class="hljs-comment"># DEV_PID = 8001 ;   </span><br><span class="hljs-comment"># LM_ID = 1234 ;</span><br><br><span class="hljs-comment"># 极速版 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）</span><br><br><span class="hljs-comment"># DEV_PID = 80001</span><br><span class="hljs-comment"># ASR_URL = &#x27;http://vop.baidu.com/pro_api&#x27;</span><br><span class="hljs-comment"># SCOPE = &#x27;brain_enhanced_asr&#x27;  # 有此scope表示有极速版能力，没有请在网页里开通极速版</span><br><br><span class="hljs-comment"># 忽略scope检查，非常旧的应用可能没有</span><br><span class="hljs-comment"># SCOPE = False</span><br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoError</span>(<span class="hljs-params">Exception</span>):</span><br>    <span class="hljs-keyword">pass</span><br><br><br><span class="hljs-string">&quot;&quot;&quot;  TOKEN start &quot;&quot;&quot;</span><br><br>TOKEN_URL = <span class="hljs-string">&#x27;http://openapi.baidu.com/oauth/2.0/token&#x27;</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fetch_token</span>():</span><br>    params = &#123;<span class="hljs-string">&#x27;grant_type&#x27;</span>: <span class="hljs-string">&#x27;client_credentials&#x27;</span>,<br>              <span class="hljs-string">&#x27;client_id&#x27;</span>: API_KEY,<br>              <span class="hljs-string">&#x27;client_secret&#x27;</span>: SECRET_KEY&#125;<br>    post_data = urlencode(params)<br>    <span class="hljs-keyword">if</span> (IS_PY3):<br>        post_data = post_data.encode( <span class="hljs-string">&#x27;utf-8&#x27;</span>)<br>    req = Request(TOKEN_URL, post_data)<br>    <span class="hljs-keyword">try</span>:<br>        f = urlopen(req)<br>        result_str = f.read()<br>    <span class="hljs-keyword">except</span> URLError <span class="hljs-keyword">as</span> err:<br>        print(<span class="hljs-string">&#x27;token http response http code : &#x27;</span> + <span class="hljs-built_in">str</span>(err.code))<br>        result_str = err.read()<br>    <span class="hljs-keyword">if</span> (IS_PY3):<br>        result_str =  result_str.decode()<br><br>    print(result_str)<br>    result = json.loads(result_str)<br>    print(result)<br>    <span class="hljs-keyword">if</span> (<span class="hljs-string">&#x27;access_token&#x27;</span> <span class="hljs-keyword">in</span> result.keys() <span class="hljs-keyword">and</span> <span class="hljs-string">&#x27;scope&#x27;</span> <span class="hljs-keyword">in</span> result.keys()):<br>        print(SCOPE)<br>        <span class="hljs-keyword">if</span> SCOPE <span class="hljs-keyword">and</span> (<span class="hljs-keyword">not</span> SCOPE <span class="hljs-keyword">in</span> result[<span class="hljs-string">&#x27;scope&#x27;</span>].split(<span class="hljs-string">&#x27; &#x27;</span>)):  <span class="hljs-comment"># SCOPE = False 忽略检查</span><br>            <span class="hljs-keyword">raise</span> DemoError(<span class="hljs-string">&#x27;scope is not correct&#x27;</span>)<br>        print(<span class="hljs-string">&#x27;SUCCESS WITH TOKEN: %s  EXPIRES IN SECONDS: %s&#x27;</span> % (result[<span class="hljs-string">&#x27;access_token&#x27;</span>], result[<span class="hljs-string">&#x27;expires_in&#x27;</span>]))<br>        <span class="hljs-keyword">return</span> result[<span class="hljs-string">&#x27;access_token&#x27;</span>]<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">raise</span> DemoError(<span class="hljs-string">&#x27;MAYBE API_KEY or SECRET_KEY not correct: access_token or scope not found in token response&#x27;</span>)<br><br><span class="hljs-string">&quot;&quot;&quot;  TOKEN end &quot;&quot;&quot;</span><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    token = fetch_token()<br><br>    speech_data = []<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(AUDIO_FILE, <span class="hljs-string">&#x27;rb&#x27;</span>) <span class="hljs-keyword">as</span> speech_file:<br>        speech_data = speech_file.read()<br><br>    length = <span class="hljs-built_in">len</span>(speech_data)<br>    <span class="hljs-keyword">if</span> length == <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">raise</span> DemoError(<span class="hljs-string">&#x27;file %s length read 0 bytes&#x27;</span> % AUDIO_FILE)<br>    speech = base64.b64encode(speech_data)<br>    <span class="hljs-keyword">if</span> (IS_PY3):<br>        speech = <span class="hljs-built_in">str</span>(speech, <span class="hljs-string">&#x27;utf-8&#x27;</span>)<br>    params = &#123;<span class="hljs-string">&#x27;dev_pid&#x27;</span>: DEV_PID,<br>             <span class="hljs-comment">#&quot;lm_id&quot; : LM_ID,    #测试自训练平台开启此项</span><br>              <span class="hljs-string">&#x27;format&#x27;</span>: FORMAT,<br>              <span class="hljs-string">&#x27;rate&#x27;</span>: RATE,<br>              <span class="hljs-string">&#x27;token&#x27;</span>: token,<br>              <span class="hljs-string">&#x27;cuid&#x27;</span>: CUID,<br>              <span class="hljs-string">&#x27;channel&#x27;</span>: <span class="hljs-number">1</span>,<br>              <span class="hljs-string">&#x27;speech&#x27;</span>: speech,<br>              <span class="hljs-string">&#x27;len&#x27;</span>: length<br>              &#125;<br>    post_data = json.dumps(params, sort_keys=<span class="hljs-literal">False</span>)<br>    <span class="hljs-comment"># print post_data</span><br>    req = Request(ASR_URL, post_data.encode(<span class="hljs-string">&#x27;utf-8&#x27;</span>))<br>    req.add_header(<span class="hljs-string">&#x27;Content-Type&#x27;</span>, <span class="hljs-string">&#x27;application/json&#x27;</span>)<br>    <span class="hljs-keyword">try</span>:<br>        begin = timer()<br>        f = urlopen(req)<br>        result_str = f.read()<br>        <span class="hljs-built_in">print</span> (<span class="hljs-string">&quot;Request time cost %f&quot;</span> % (timer() - begin))<br>    <span class="hljs-keyword">except</span> URLError <span class="hljs-keyword">as</span> err:<br>        print(<span class="hljs-string">&#x27;asr http response http code : &#x27;</span> + <span class="hljs-built_in">str</span>(err.code))<br>        result_str = err.read()<br><br>    <span class="hljs-keyword">if</span> (IS_PY3):<br>        result_str = <span class="hljs-built_in">str</span>(result_str, <span class="hljs-string">&#x27;utf-8&#x27;</span>)<br>    print(result_str)<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;result.txt&quot;</span>,<span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> of:<br>        of.write(result_str)<br></code></pre></td></tr></table></figure>
+<h1 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h1><p>我们运行程序后或返回一下信息</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs 1c">&#123;<span class="hljs-string">&quot;access_token&quot;</span>:<span class="hljs-string">&quot;24.0ed58d5f890b6388b8e1fbb4f595e64e.2592000.1589017415.282335-19345000&quot;</span>,<span class="hljs-string">&quot;session_key&quot;</span>:<span class="hljs-string">&quot;9mzdC33+ru+xjYD0Bs+vqaaCurlrknFs75w6pvM+ddSFc9hWFqSn0t8aW8gWU7qWGl21RSTcM4A1bevZRf5m2labdgfjvA==&quot;</span>,<span class="hljs-string">&quot;scope&quot;</span>:<span class="hljs-string">&quot;audio_voice_assistant_get brain_enhanced_asr audio_tts_post public brain_all_scope picchain_test_picchain_api_scope wise_adapt lebo_resource_base lightservice_public hetu_basic lightcms_map_poi kaidian_kaidian ApsMisTest_Test\u6743\u9650 vis-classify_flower lpq_\u5f00\u653e cop_helloScope ApsMis_fangdi_permission smartapp_snsapi_base iop_autocar oauth_tp_app smartapp_smart_game_openapi oauth_sessionkey smartapp_swanid_verify smartapp_opensource_openapi smartapp_opensource_recapi qatest_scope1 fake_face_detect_\u5f00\u653eScope vis-ocr_\u865a\u62df\u4eba\u7269\u52a9\u7406 idl-video_\u865a\u62df\u4eba\u7269\u52a9\u7406&quot;</span>,<span class="hljs-string">&quot;refresh_token&quot;</span>:<span class="hljs-string">&quot;25.ccc2be055d9e6273d3c0bad9b8bb2368.315360000.1901785415.282335-19345000&quot;</span>,<span class="hljs-string">&quot;session_secret&quot;</span>:<span class="hljs-string">&quot;a0a53e0d2183b7145217373b71784075&quot;</span>,<span class="hljs-string">&quot;expires_in&quot;</span>:<span class="hljs-number">2592000</span>&#125;<br>&#123;&#x27;access_token&#x27;: &#x27;24.0ed58d5f890b<span class="hljs-number">6388</span>b8e1fbb4f595e64e.<span class="hljs-number">259200</span>0.<span class="hljs-number">1589017415.2823</span>35-<span class="hljs-number">19345000</span>&#x27;, &#x27;session_key&#x27;: &#x27;9mzdC33+ru+xjYD0Bs+vqaaCurlrknFs75w6pvM+ddSFc9hWFqSn0t8aW8gWU7qWGl21RSTcM4A1bevZRf5m2labdgfjvA==&#x27;, &#x27;scope&#x27;: &#x27;audio_voice_assistant_get brain_enhanced_asr audio_tts_post public brain_all_scope picchain_test_picchain_api_scope wise_adapt lebo_resource_base lightservice_public hetu_basic lightcms_map_poi kaidian_kaidian ApsMisTest_Test权限 vis-classify_flower lpq_开放 cop_helloScope ApsMis_fangdi_permission smartapp_snsapi_base iop_autocar oauth_tp_app smartapp_smart_game_openapi oauth_sessionkey smartapp_swanid_verify smartapp_opensource_openapi smartapp_opensource_recapi qatest_scope1 fake_face_detect_开放Scope vis-ocr_虚拟人物助理 idl-video_虚拟人物助理&#x27;, &#x27;refresh_token&#x27;: &#x27;25.ccc2be055d9e<span class="hljs-number">6273</span>d3c0bad9b8bb<span class="hljs-number">2368.31536000</span>0.<span class="hljs-number">1901785415.2823</span>35-<span class="hljs-number">19345000</span>&#x27;, &#x27;session_secret&#x27;: &#x27;a0a53e0d<span class="hljs-number">2183</span>b<span class="hljs-number">7145217373</span>b<span class="hljs-number">71784075</span>&#x27;, &#x27;expires_in&#x27;: <span class="hljs-number">2592000</span>&#125;<br>audio_voice_assistant_get<br>SUCCESS WITH TOKEN: <span class="hljs-number">24.0</span>ed58d5f890b6388b8e1fbb4f595e64e.<span class="hljs-number">2592000.1589017415</span>.<span class="hljs-number">282335</span>-<span class="hljs-number">19345000</span>  EXPIRES IN SECONDS: <span class="hljs-number">2592000</span><br>Request time cost <span class="hljs-number">1.736482</span><br>&#123;<span class="hljs-string">&quot;corpus_no&quot;</span>:<span class="hljs-string">&quot;6813645276203395866&quot;</span>,<span class="hljs-string">&quot;err_msg&quot;</span>:<span class="hljs-string">&quot;success.&quot;</span>,<span class="hljs-string">&quot;err_no&quot;</span>:<span class="hljs-number">0</span>,<span class="hljs-string">&quot;result&quot;</span>:[<span class="hljs-string">&quot;Beijing Cody girl&quot;</span>],<span class="hljs-string">&quot;sn&quot;</span>:<span class="hljs-string">&quot;487908489041586425415&quot;</span>&#125;<br></code></pre></td></tr></table></figure>
+<p><img src="https://ae01.alicdn.com/kf/H119a0599495846b8aaf1762ffbe78a6aV.png" srcset="/img/loading.gif" lazyload alt="8"><br>“result”:[“Beijing Cody girl”]中的内容就是识别的内容，在程序根目录也会生成result.txt文件也可以查看。</p>
 </li>
 </ul>
-<h1 id="引入所需库"><a href="#引入所需库" class="headerlink" title="引入所需库"></a>引入所需库</h1><p>import sys<br>import json<br>import base64<br>import time</p>
-<p>IS_PY3 = sys.version_info.major == 3</p>
-<p>if IS_PY3:<br>    from urllib.request import urlopen<br>    from urllib.request import Request<br>    from urllib.error import URLError<br>    from urllib.parse import urlencode<br>    timer = time.perf_counter<br>else:<br>    from urllib2 import urlopen<br>    from urllib2 import Request<br>    from urllib2 import URLError<br>    from urllib import urlencode<br>    if sys.platform == “win32”:<br>        timer = time.clock<br>    else:<br>        # On most other platforms the best timer is time.time()<br>        timer = time.time</p>
-<h1 id="设置api-key-secret-key-此数据在上文有提及"><a href="#设置api-key-secret-key-此数据在上文有提及" class="headerlink" title="设置api-key,secret-key  此数据在上文有提及"></a>设置api-key,secret-key  此数据在上文有提及</h1><p>API_KEY = ‘你的api-key’<br>SECRET_KEY = ‘你的secret-key’</p>
-<h1 id="需要识别的文件-audio-16k-pcm为音频文件路径，例如在D盘，那就是D-audio-16k-pcm"><a href="#需要识别的文件-audio-16k-pcm为音频文件路径，例如在D盘，那就是D-audio-16k-pcm" class="headerlink" title="需要识别的文件  ./audio/16k.pcm为音频文件路径，例如在D盘，那就是D:/audio/16k.pcm"></a>需要识别的文件  ./audio/16k.pcm为音频文件路径，例如在D盘，那就是D:/audio/16k.pcm</h1><p>AUDIO_FILE = ‘./audio/16k.pcm’  # 只支持 pcm/wav/amr 格式，极速版额外支持m4a 格式</p>
-<h1 id="文件格式"><a href="#文件格式" class="headerlink" title="文件格式"></a>文件格式</h1><p>FORMAT = AUDIO_FILE[-3:]  # 文件后缀只支持 pcm/wav/amr 格式，极速版额外支持m4a 格式</p>
-<h1 id="电脑mac地址，个人感觉没用，默认即可"><a href="#电脑mac地址，个人感觉没用，默认即可" class="headerlink" title="电脑mac地址，个人感觉没用，默认即可"></a>电脑mac地址，个人感觉没用，默认即可</h1><p>CUID = ‘123456PYTHON’</p>
-<h1 id="采样率"><a href="#采样率" class="headerlink" title="采样率"></a>采样率</h1><p>RATE = 16000  # 固定值</p>
-<h1 id="普通版"><a href="#普通版" class="headerlink" title="普通版"></a>普通版</h1><p>DEV_PID = 1537  # 1537 表示识别普通话，使用输入法模型。根据文档填写PID，选择语言及识别模型<br>ASR_URL = ‘<a target="_blank" rel="noopener" href="http://vop.baidu.com/server_api&#39;">http://vop.baidu.com/server_api&#39;</a><br>SCOPE = ‘audio_voice_assistant_get’  # 有此scope表示有asr能力，没有请在网页里勾选，非常旧的应用可能没有</p>
-<p>#测试自训练平台需要打开以下信息， 自训练平台模型上线后，您会看见 第二步：“”获取专属模型参数pid:8001，modelid:1234”，按照这个信息获取 dev_pid=8001，lm_id=1234</p>
-<h1 id="DEV-PID-8001"><a href="#DEV-PID-8001" class="headerlink" title="DEV_PID = 8001 ;"></a>DEV_PID = 8001 ;</h1><h1 id="LM-ID-1234"><a href="#LM-ID-1234" class="headerlink" title="LM_ID = 1234 ;"></a>LM_ID = 1234 ;</h1><h1 id="极速版-打开注释的话请填写自己申请的appkey-appSecret-，并在网页中开通极速版（开通后可能会收费）"><a href="#极速版-打开注释的话请填写自己申请的appkey-appSecret-，并在网页中开通极速版（开通后可能会收费）" class="headerlink" title="极速版 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）"></a>极速版 打开注释的话请填写自己申请的appkey appSecret ，并在网页中开通极速版（开通后可能会收费）</h1><h1 id="DEV-PID-80001"><a href="#DEV-PID-80001" class="headerlink" title="DEV_PID = 80001"></a>DEV_PID = 80001</h1><h1 id="ASR-URL-‘http-vop-baidu-com-pro-api-39"><a href="#ASR-URL-‘http-vop-baidu-com-pro-api-39" class="headerlink" title="ASR_URL = ‘http://vop.baidu.com/pro_api&#39;"></a>ASR_URL = ‘<a target="_blank" rel="noopener" href="http://vop.baidu.com/pro_api&#39;">http://vop.baidu.com/pro_api&#39;</a></h1><h1 id="SCOPE-‘brain-enhanced-asr’-有此scope表示有极速版能力，没有请在网页里开通极速版"><a href="#SCOPE-‘brain-enhanced-asr’-有此scope表示有极速版能力，没有请在网页里开通极速版" class="headerlink" title="SCOPE = ‘brain_enhanced_asr’  # 有此scope表示有极速版能力，没有请在网页里开通极速版"></a>SCOPE = ‘brain_enhanced_asr’  # 有此scope表示有极速版能力，没有请在网页里开通极速版</h1><h1 id="忽略scope检查，非常旧的应用可能没有"><a href="#忽略scope检查，非常旧的应用可能没有" class="headerlink" title="忽略scope检查，非常旧的应用可能没有"></a>忽略scope检查，非常旧的应用可能没有</h1><h1 id="SCOPE-False"><a href="#SCOPE-False" class="headerlink" title="SCOPE = False"></a>SCOPE = False</h1><p>class DemoError(Exception):<br>    pass</p>
-<p>“””  TOKEN start “””</p>
-<p>TOKEN_URL = ‘<a target="_blank" rel="noopener" href="http://openapi.baidu.com/oauth/2.0/token&#39;">http://openapi.baidu.com/oauth/2.0/token&#39;</a></p>
-<p>def fetch_token():<br>    params = {‘grant_type’: ‘client_credentials’,<br>              ‘client_id’: API_KEY,<br>              ‘client_secret’: SECRET_KEY}<br>    post_data = urlencode(params)<br>    if (IS_PY3):<br>        post_data = post_data.encode( ‘utf-8’)<br>    req = Request(TOKEN_URL, post_data)<br>    try:<br>        f = urlopen(req)<br>        result_str = f.read()<br>    except URLError as err:<br>        print(‘token http response http code : ‘ + str(err.code))<br>        result_str = err.read()<br>    if (IS_PY3):<br>        result_str =  result_str.decode()</p>
-<pre><code>print(result_str)
-result = json.loads(result_str)
-print(result)
-if (&#39;access_token&#39; in result.keys() and &#39;scope&#39; in result.keys()):
-    print(SCOPE)
-    if SCOPE and (not SCOPE in result[&#39;scope&#39;].split(&#39; &#39;)):  # SCOPE = False 忽略检查
-        raise DemoError(&#39;scope is not correct&#39;)
-    print(&#39;SUCCESS WITH TOKEN: %s  EXPIRES IN SECONDS: %s&#39; % (result[&#39;access_token&#39;], result[&#39;expires_in&#39;]))
-    return result[&#39;access_token&#39;]
-else:
-    raise DemoError(&#39;MAYBE API_KEY or SECRET_KEY not correct: access_token or scope not found in token response&#39;)
-</code></pre>
-<p>“””  TOKEN end “””</p>
-<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    token = fetch_token()</p>
-<pre><code>speech_data = []
-with open(AUDIO_FILE, &#39;rb&#39;) as speech_file:
-    speech_data = speech_file.read()
-
-length = len(speech_data)
-if length == 0:
-    raise DemoError(&#39;file %s length read 0 bytes&#39; % AUDIO_FILE)
-speech = base64.b64encode(speech_data)
-if (IS_PY3):
-    speech = str(speech, &#39;utf-8&#39;)
-params = &#123;&#39;dev_pid&#39;: DEV_PID,
-         #&quot;lm_id&quot; : LM_ID,    #测试自训练平台开启此项
-          &#39;format&#39;: FORMAT,
-          &#39;rate&#39;: RATE,
-          &#39;token&#39;: token,
-          &#39;cuid&#39;: CUID,
-          &#39;channel&#39;: 1,
-          &#39;speech&#39;: speech,
-          &#39;len&#39;: length
-          &#125;
-post_data = json.dumps(params, sort_keys=False)
-# print post_data
-req = Request(ASR_URL, post_data.encode(&#39;utf-8&#39;))
-req.add_header(&#39;Content-Type&#39;, &#39;application/json&#39;)
-try:
-    begin = timer()
-    f = urlopen(req)
-    result_str = f.read()
-    print (&quot;Request time cost %f&quot; % (timer() - begin))
-except URLError as err:
-    print(&#39;asr http response http code : &#39; + str(err.code))
-    result_str = err.read()
-
-if (IS_PY3):
-    result_str = str(result_str, &#39;utf-8&#39;)
-print(result_str)
-with open(&quot;result.txt&quot;,&quot;w&quot;) as of:
-    of.write(result_str)
-</code></pre>
-<pre><code>
-# 运行程序
-我们运行程序后或返回一下信息
-</code></pre>
-<p>{“access_token”:”24.0ed58d5f890b6388b8e1fbb4f595e64e.2592000.1589017415.282335-19345000”,”session_key”:”9mzdC33+ru+xjYD0Bs+vqaaCurlrknFs75w6pvM+ddSFc9hWFqSn0t8aW8gWU7qWGl21RSTcM4A1bevZRf5m2labdgfjvA==”,”scope”:”audio_voice_assistant_get brain_enhanced_asr audio_tts_post public brain_all_scope picchain_test_picchain_api_scope wise_adapt lebo_resource_base lightservice_public hetu_basic lightcms_map_poi kaidian_kaidian ApsMisTest_Test\u6743\u9650 vis-classify_flower lpq_\u5f00\u653e cop_helloScope ApsMis_fangdi_permission smartapp_snsapi_base iop_autocar oauth_tp_app smartapp_smart_game_openapi oauth_sessionkey smartapp_swanid_verify smartapp_opensource_openapi smartapp_opensource_recapi qatest_scope1 fake_face_detect_\u5f00\u653eScope vis-ocr_\u865a\u62df\u4eba\u7269\u52a9\u7406 idl-video_\u865a\u62df\u4eba\u7269\u52a9\u7406”,”refresh_token”:”25.ccc2be055d9e6273d3c0bad9b8bb2368.315360000.1901785415.282335-19345000”,”session_secret”:”a0a53e0d2183b7145217373b71784075”,”expires_in”:2592000}<br>{‘access_token’: ‘24.0ed58d5f890b6388b8e1fbb4f595e64e.2592000.1589017415.282335-19345000’, ‘session_key’: ‘9mzdC33+ru+xjYD0Bs+vqaaCurlrknFs75w6pvM+ddSFc9hWFqSn0t8aW8gWU7qWGl21RSTcM4A1bevZRf5m2labdgfjvA==’, ‘scope’: ‘audio_voice_assistant_get brain_enhanced_asr audio_tts_post public brain_all_scope picchain_test_picchain_api_scope wise_adapt lebo_resource_base lightservice_public hetu_basic lightcms_map_poi kaidian_kaidian ApsMisTest_Test权限 vis-classify_flower lpq_开放 cop_helloScope ApsMis_fangdi_permission smartapp_snsapi_base iop_autocar oauth_tp_app smartapp_smart_game_openapi oauth_sessionkey smartapp_swanid_verify smartapp_opensource_openapi smartapp_opensource_recapi qatest_scope1 fake_face_detect_开放Scope vis-ocr_虚拟人物助理 idl-video_虚拟人物助理’, ‘refresh_token’: ‘25.ccc2be055d9e6273d3c0bad9b8bb2368.315360000.1901785415.282335-19345000’, ‘session_secret’: ‘a0a53e0d2183b7145217373b71784075’, ‘expires_in’: 2592000}<br>audio_voice_assistant_get<br>SUCCESS WITH TOKEN: 24.0ed58d5f890b6388b8e1fbb4f595e64e.2592000.1589017415.282335-19345000  EXPIRES IN SECONDS: 2592000<br>Request time cost 1.736482<br>{“corpus_no”:”6813645276203395866”,”err_msg”:”success.”,”err_no”:0,”result”:[“Beijing Cody girl”],”sn”:”487908489041586425415”}</p>
-<p>```<br>
-        <span class="lazyload-img-span">
-        <img   
-           data-src="https://ae01.alicdn.com/kf/H119a0599495846b8aaf1762ffbe78a6aV.png" >
-        </sapn>
-      <br>“result”:[“Beijing Cody girl”]中的内容就是识别的内容，在程序根目录也会生成result.txt文件也可以查看。</p>
 <p>ok，大概就是这个样子，我要去研究pcm这个鬼东西了。。。</p>
 
-        <!-- 分类文章 -->
-        
-      </div>
-      <div class="post-content-inner-space">
-        
-          <div class="space-toc-main animate__animated  animate__fadeInUp">
-            
-           </div>
-        
-      </div>
-   </div>
-    <!-- 评论 -->
-    
-    <div class="bottom-comments-outer">
-      <div class="bottom-comments-inner">
-        <!-- valine -->
-        
-          <section id="comments" class="comments" style="margin-top: 150px;">
-            <style>
-              .comments{background:#fff}
-              @media screen and (max-width:900px){.comments{margin:auto;padding:10px;background:#fff}}
-            </style>
-            <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    var notify = 'true' == true ? true : false;
-    var verify = 'true' == true ? true : false;
-    new Valine({
-        av: AV,
-        el: '#vcomment',
-        notify: notify,
-        app_id: "oLziw6ntaHtCC9A0HLYYu5OE-gzGzoHsz",
-        app_key: "KjHsec1b3kguAMPQ7io7JlFs",
-        placeholder: "留下你来过的痕迹~",
-        avatar:"robohash",
-    });
-</script>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/04/34.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">U校园获取听力音频教程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/32.html">
+                        <span class="hidden-mobile">表情包太少？利用Python爬取表情包</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
 
-          </section>
-        
-        <!-- Gitalk -->
-        
-        <!-- livere -->
-        
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.lazyComments('valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#valine",
+          app_id: "oLziw6ntaHtCC9A0HLYYu5OE-gzGzoHsz",
+          app_key: "KjHsec1b3kguAMPQ7io7JlFs",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "https://olziw6nt.lc-cn-n1-shared.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
     
   </div>
-</article>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
   </div>
 </div>
+    
 
+    
+  </main>
 
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     © 2021 云淡风轻|<a href="https://www.beian.miit.gov.cn" target="_blank" rel="nofollow noopener"><span>冀ICP备19031443号</span></a> <br> <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img src="https://imgs.521daigua.cn/%E6%A0%B7%E5%BC%8F%E5%9B%BE.7cf927c.png" width="300px" height="20px"></a>
 
-<!-- 如果是home模式的话，不在首页就显示footer，如果不是home模式的话 所有都显示footer -->
-
-  <div class="footer-outer animate__animated  animate__fadeInUp">
-    <div class="footer-inner">
-    <div class="footer-text">
-    <p>© 2021 云淡风轻|<a target="_blank" rel="noopener" href="https://www.beian.miit.gov.cn/">冀ICP备19031443号</a><br><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img src="https://imgs.521daigua.cn/%E6%A0%B7%E5%BC%8F%E5%9B%BE.7cf927c.png" width="300px" height="20px"></a><br><script data-ad-client="ca-pub-8199652999435074" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></p>
-
-    </div>
-    <div class="footer-contact">
-    <ul class="footer-ul">
-        
-        <li class="footer-li">
-            <a href="https://github.com/ne-21" target="_blank">
-                <i class="ri-github-line"></i>
-            </a>
-        </li>
-        
-        <li class="footer-li">
-            <a href="mailto:nawlgzs@gmail.com" target="_blank">
-                <i class="ri-mail-line"></i>
-            </a>
-        </li>
-        
-    </ul>
-    </div>
-    </div>
-	<script>
-	var _hmt = _hmt || [];
-	(function() {
-	var hm = document.createElement("script");
-	hm.src = "https://hm.baidu.com/hm.js?46c8202ccbfe91fef8f7d5fddc0ce94a";
-	var s = document.getElementsByTagName("script")[0]; 
-	s.parentNode.insertBefore(hm, s);
-	})();
-	</script>
-</div>
-
-
-
-
-
-
-<script src="/js/white.js"></script>
-
-
+  </div>
+  
+  <div class="statistics">
+    
+    
 
     
       
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
 
-      <script>hljs.initHighlightingOnLoad();</script>
     
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    
+      <script  src="/js/img-lazyload.js" ></script>
+    
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?46c8202ccbfe91fef8f7d5fddc0ce94a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
 
 </body>
 </html>
