@@ -18,7 +18,7 @@
   <meta name="author" content="Ne-21">
   <meta name="keywords" content="云淡风轻, hexo, various, python, html, 小刀娱乐网, 编程, 自学">
   
-  <title>基于Valine云引擎+Qmsg酱实现博客评论推送 - 云淡风轻</title>
+  <title>【油猴脚本】蓝墨云班课互评作业自动评分 - 云淡风轻</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="基于Valine云引擎+Qmsg酱实现博客评论推送">
+            <span class="h2" id="subtitle" title="【油猴脚本】蓝墨云班课互评作业自动评分">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-28 15:59" pubdate>
-        2021年2月28日 下午
+      <time datetime="2021-03-29 16:23" pubdate>
+        2021年3月29日 下午
       </time>
     </span>
   
@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      662 字
+      523 字
     </span>
   
 
@@ -245,100 +245,24 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">基于Valine云引擎+Qmsg酱实现博客评论推送</h1>
+            <h1 style="display: none">【油猴脚本】蓝墨云班课互评作业自动评分</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年2月28日 下午
+                  本文最后更新于：2021年3月29日 下午
                 
               </p>
             
             <div class="markdown-body">
-              <blockquote>
-<p>最近给blog加了Valine评论系统，发现不能实现评论的主动推送，所以今天就找到一篇利用Qmsg进行推送的文章，分享一下</p>
-</blockquote>
-<p><strong>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013817026/article/details/111167377">https://blog.csdn.net/u013817026/article/details/111167377</a></strong></p>
-<h1 id="认领一只Qmsg酱"><a href="#认领一只Qmsg酱" class="headerlink" title="认领一只Qmsg酱"></a>认领一只Qmsg酱</h1><ul>
-<li><p>打开Qmsg酱官网,可以选择QQ登陆</p>
-<pre><code>点击这里➡ [Qmsg酱官网](https://qmsg.zendee.cn/)
-</code></pre>
-</li>
-<li><p>选择你中意的Qmsg酱并且添加她为QQ好友</p>
-</li>
-</ul>
-<p><img src="https://pic.521daigua.cn/2021/02/28/4abb1853c79e2.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210228154007.png"></p>
+              <h1 id="怎么看待云班课作业互评无脑打低分？"><a href="#怎么看待云班课作业互评无脑打低分？" class="headerlink" title="怎么看待云班课作业互评无脑打低分？"></a>怎么看待云班课作业互评无脑打低分？</h1><p>云班课匿名互评，提交作业的可以看见答案，然后评分。但是一个人可以给所有人评分，所以会有人给你们打底分，即使你写的是全对的，亲身体验，发现了它的弊端，毕竟不是所有人都是很好的，就算这样，老师也不可能每天都在批改所有人的作业，而且作业毕竟多，没办法给人公平。只能在心里骂那个缺德的人。</p>
+<hr>
+<h1 id="如何做一个聪明人"><a href="#如何做一个聪明人" class="headerlink" title="如何做一个聪明人"></a>如何做一个聪明人</h1><p><strong><em>全评满分！！！！！！！！！！！！！！！！！</em></strong></p>
 <ul>
-<li><p>添加你要接收推送的QQ号码<br>在选择Qmsg酱的旁边菜单添加，描述随意。</p>
-</li>
-<li><p>拼接你的接口地址<br>点击最右边的KEY，可以看到一长串字符，复制下来备用：</p>
-</li>
+<li>脚本链接<a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts/424128">https://greasyfork.org/zh-CN/scripts/424128</a></li>
+<li>效果图<br><img src="https://z3.ax1x.com/2021/03/29/cCQF2D.png" srcset="/img/loading.gif" lazyload alt="cCQF2D.png"></li>
+<li>代码</li>
 </ul>
-<p><img src="https://pic.521daigua.cn/2021/02/28/d348b93e81f68.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210228154147.png"></p>
-<ul>
-<li>测试你的Qmsg是否认领成功<br>点击文档，查看接口地址,复制下来，把你的KEY粘贴在最后：</li>
-</ul>
-<p><img src="https://pic.521daigua.cn/2021/02/28/7a3dda4363871.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210228154300.png"></p>
-<p>然后将接口地址粘贴到浏览器地址栏，在末尾加上?msg= ，在等于后面随便输入文字，回车，如果成功你会看到Qmsg酱给你发来的消息：</p>
-<p><img src="https://pic.521daigua.cn/2021/02/28/af24d52a2fa2d.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210228154539.png"></p>
-<h1 id="在Leancloud创建应用"><a href="#在Leancloud创建应用" class="headerlink" title="在Leancloud创建应用"></a>在Leancloud创建应用</h1><p>相信你有一个应用服务于valine的应用了，如果没有请参考Valine的文档</p>
-<p>Valine作者文档： <a target="_blank" rel="noopener" href="https://valine.js.org/quickstart.html">Valine快速开始</a></p>
-<p><strong>通过云引擎部署项目</strong></p>
-<ul>
-<li>在云引擎部署<br>在Git部署的地址栏里输入这个仓库地址，然后点击部署：</li>
-</ul>
-<p><code>https://github.com/W4J1e/Hexo-Valine-ASPush</code></p>
-<p><img src="https://pic.521daigua.cn/2021/02/28/bbd418d00b105.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210228154834.png"></p>
-<ul>
-<li>配置变量<br>最后记得保存（本文只谈Qmsg酱推送，其它如server酱、邮件推送和评论后台管理可以自行参考原作者的配置）：</li>
-</ul>
-<p>变量参数如下：</p>
-<table>
-<thead>
-<tr>
-<th align="center">变量名</th>
-<th align="center">说明</th>
-<th align="center">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">SITE_NAME</td>
-<td align="center">[必填]网站名称</td>
-<td align="center">云淡风轻</td>
-</tr>
-<tr>
-<td align="center">SITE_URL</td>
-<td align="center">[必填] 博客地址，末尾不要加 /</td>
-<td align="center"><a href="https://gocos.cn/">https://gocos.cn</a></td>
-</tr>
-<tr>
-<td align="center">COMMENT</td>
-<td align="center">[可选] 评论 div 的 ID 名，点击链接直接跳转到评论位置</td>
-<td align="center">#post-comment</td>
-</tr>
-<tr>
-<td align="center">QMSG_KEY</td>
-<td align="center">[必填] Qmsg酱的KEY</td>
-<td align="center">xxx</td>
-</tr>
-<tr>
-<td align="center">QQ</td>
-<td align="center">[必填] Qmsg酱发送的 qq，支持多个，用英文逗号分隔即可</td>
-<td align="center">10001</td>
-</tr>
-</tbody></table>
-<p>示例：</p>
-<p><img src="https://pic.521daigua.cn/2021/02/28/bda0dc849a10d.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210228155508.png"></p>
-<ul>
-<li><p>运行部署<br>点击左侧“部署”，在git部署下面再次点击部署。</p>
-</li>
-<li><p>测试推送<br>打开你的博客，用另一个身份发一条评论测试一下吧。</p>
-<p><img src="https://pic.521daigua.cn/2021/02/28/f10b6a6f3a045.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210228155639.png"></p>
-</li>
-</ul>
-<p>注：前一条推送的评论使用了原版的推送模板，我已在源码中去除这些可能无法正确显示的表情，新版推送很简洁，以后修改与否视情况而定 。</p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>如果没有推送成功，请在leancloud中查看日志，并将报错内容反馈于我。</p>
-<p>后续有时间了才能逐渐完善这份文档和代码仓库，毕竟打工人，不像蝶衣大佬一样可以休！产！假！<br>最后，感谢各位前辈们造的车轮！</p>
-
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><code class="hljs reasonml"><span class="hljs-comment">// ==UserScript==</span><br><span class="hljs-comment">// @name         蓝墨云班课作业互评自动评满分</span><br><span class="hljs-comment">// @namespace    nawlgzs@163.com</span><br><span class="hljs-comment">// @version      1.0</span><br><span class="hljs-comment">// @description  云班课作业互评自动评满分</span><br><span class="hljs-comment">// @author       Ne-21</span><br><span class="hljs-comment">// @compatible   Chrome</span><br><span class="hljs-comment">// @match        *://www.mosoteach.cn/web/index.php?c=interaction_homework&amp;m=homework_result_list*</span><br><span class="hljs-comment">// @grant        unsafeWindow</span><br><span class="hljs-comment">// @require      http://libs.baidu.com/jquery/2.0.0/jquery.min.js</span><br><span class="hljs-comment">// @license      MIT</span><br><span class="hljs-comment">// ==/UserScript==</span><br> <br>(<span class="hljs-keyword">function</span><span class="hljs-literal">()</span> &#123;<br>    var _self = unsafeWindow;<br>    var $ = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">_self</span>.</span></span>jQuery<span class="hljs-operator"> || </span>top.jQuery;<br>    <span class="hljs-constructor">$(<span class="hljs-params">document</span>)</span>.ready( <span class="hljs-keyword">function</span> <span class="hljs-literal">()</span> &#123;<br>        alert(<span class="hljs-string">&quot;请点击确定开始自动评分    BY.Ne-21,博客：https://gocos.cn&quot;</span>);<br>        console.log(<span class="hljs-string">&quot;开始自动评分BY.Ne-21,博客：https://gocos.cn&quot;</span>);<br>        var <span class="hljs-built_in">list</span> = document.query<span class="hljs-constructor">SelectorAll(&#x27;.<span class="hljs-params">homework</span>-<span class="hljs-params">item</span>&#x27;)</span>;<br>        var total = <span class="hljs-built_in">list</span>.length - <span class="hljs-number">1</span>;<br>        var i = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">let</span> t = set<span class="hljs-constructor">Interval( <span class="hljs-params">function</span> ()</span> &#123;<br>            console.log(<span class="hljs-string">&quot;共计:&quot;</span> + total + <span class="hljs-string">&quot;位，开始评分：第&quot;</span> + i + <span class="hljs-string">&quot;位&quot;</span>);<br>            var one = <span class="hljs-built_in">list</span><span class="hljs-literal">[<span class="hljs-identifier">i</span>]</span>;<br>            <span class="hljs-comment">// i++;</span><br>            <span class="hljs-keyword">do</span><span class="hljs-constructor">Pingfen(<span class="hljs-params">one</span>)</span>;<br>            i++;<br>            <span class="hljs-keyword">if</span> ( i<span class="hljs-operator"> == </span>total+<span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-comment">// 清除Interval的定时器</span><br>            clear<span class="hljs-constructor">Interval(<span class="hljs-params">t</span>)</span>;<br>            console.log(<span class="hljs-string">&quot;全部完成&quot;</span>);<br>            &#125;;<br>        &#125;,<span class="hljs-number">3000</span>);<br>    &#125;);<br>&#125;)<span class="hljs-literal">()</span>;<br> <br><span class="hljs-keyword">function</span> <span class="hljs-keyword">do</span><span class="hljs-constructor">Pingfen(<span class="hljs-params">one</span>)</span> &#123;<br>    <span class="hljs-comment">// console.log(one);</span><br>    <span class="hljs-keyword">try</span>&#123;<br>        var s = one.query<span class="hljs-constructor">Selector(<span class="hljs-string">&quot;div.appraised-box.cl &gt; div &gt; span.user-current-score&quot;</span>)</span>.textContent;<br> <br>        <span class="hljs-comment">// console.log(s);</span><br>        <span class="hljs-keyword">if</span> ( s<span class="hljs-operator"> == </span><span class="hljs-string">&quot;请评分&quot;</span> ) &#123;<br>            one.query<span class="hljs-constructor">Selector(<span class="hljs-string">&quot;div &gt; span.appraise-button.appraised-button-enable&quot;</span>)</span>.click<span class="hljs-literal">()</span><br>            console.log(<span class="hljs-string">&quot;选中评分&quot;</span>);<br>            <span class="hljs-keyword">let</span> a = set<span class="hljs-constructor">Interval( <span class="hljs-params">function</span> ()</span> &#123;<br>                one.query<span class="hljs-constructor">Selector(&#x27;<span class="hljs-params">div</span>.<span class="hljs-params">item</span>-<span class="hljs-params">score</span>-<span class="hljs-params">box</span> &gt; <span class="hljs-params">div</span>.<span class="hljs-params">score</span>-<span class="hljs-params">points</span>-<span class="hljs-params">item</span>.<span class="hljs-params">cl</span> &gt; <span class="hljs-params">ul</span> &gt; <span class="hljs-params">li</span>:<span class="hljs-params">nth</span>-<span class="hljs-params">child</span>(1)</span>&#x27;).click<span class="hljs-literal">()</span>;<br>                console.log(<span class="hljs-string">&quot;选中分数&quot;</span>);<br>                one.query<span class="hljs-constructor">Selector(&#x27;#<span class="hljs-params">score</span>&#x27;)</span>.click<span class="hljs-literal">()</span>;<br>                console.log(<span class="hljs-string">&quot;评分完成&quot;</span>);<br>                <span class="hljs-comment">// 清除Interval的定时器</span><br>                clear<span class="hljs-constructor">Interval(<span class="hljs-params">a</span>)</span>;<br>            &#125;,<span class="hljs-number">3000</span>);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            console.log(<span class="hljs-string">&quot;重复评分，跳过！&quot;</span>)<br>        &#125;;<br>        return;<br>    &#125; catch(e) &#123;<br>        console.log(<span class="hljs-string">&quot;可能是没有提交。&quot;</span> + e);<br>        return;<br>    &#125;;<br>&#125;;<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -348,7 +272,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/hexo/">hexo</a>
+                      <a class="hover-with-bg" href="/tags/web/">web</a>
                     
                   </div>
                 
@@ -365,18 +289,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/69.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【油猴脚本】蓝墨云班课互评作业自动评分</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/67.html">
-                        <span class="hidden-mobile">2020年我都经历了什么？</span>
+                      <a href="/2021/02/68.html">
+                        <span class="hidden-mobile">基于Valine云引擎+Qmsg酱实现博客评论推送</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
