@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>中国大学MOOC提前看期末考试成绩</title>
+      <link href="2021/06/73.html"/>
+      <url>2021/06/73.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>考完了就不给你看考试成绩，就是让你等着，哎，就是玩，气不气？</p><p><img src="https://i.loli.net/2021/06/13/reHvTMlLKDugNJc.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210613113808.png"></p></blockquote><p>emmm……在网上就是找不到解决的方法，只是听说改时间可以看到成绩，既然没有详细的教程，那我只好自己动手了。</p><p>​                                                        <strong>转载本文请注明出处，谢谢</strong></p><h1 id="正常登陆"><a href="#正常登陆" class="headerlink" title="正常登陆"></a>正常登陆</h1><p>打开中国大学官网（<a href="https://www.icourse163.org)正常登陆账号,来到对应的课程考试界面./">https://www.icourse163.org）正常登陆账号，来到对应的课程考试界面。</a></p><p><img src="https://i.loli.net/2021/06/13/muvHZ7hkqOcAURI.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210613114831.png"></p><h1 id="修改系统时间"><a href="#修改系统时间" class="headerlink" title="修改系统时间"></a>修改系统时间</h1><p>我们可以看到，该考试20号才公布成绩，那好，我们把系统时间改成22号。</p><p><img src="https://i.loli.net/2021/06/13/fZSYTKG6jc3ehgH.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210622115030.png"></p><h1 id="回到网页"><a href="#回到网页" class="headerlink" title="回到网页"></a>回到网页</h1><p>修改完我们回到网页，此时网页不要全局刷新，只让他局部刷新，方法就是点击左侧导航栏</p><p><img src="https://i.loli.net/2021/06/13/G5TMD3KeHqwALzS.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210622115245.png"></p><p>我们从课件、测验与作业、考试、讨论区循环点，直至考试页面出现成绩</p><p><img src="https://i.loli.net/2021/06/13/5seBSRHody72XiP.png" srcset="/img/loading.gif" lazyload alt="QQ截图20210622115448.png"></p><p><strong>切记改完时间不要全局刷新</strong>！！！！！！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何编译自己需要的 OpenWrt 固件</title>
       <link href="2021/05/72.html"/>
       <url>2021/05/72.html</url>
